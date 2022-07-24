@@ -9,8 +9,8 @@
 -- docker pull  container-registry.oracle.com/database/enterprise:21.3.0.0
  
  
-docker run -d --name oracle19c3 -e ORACLE_SID=ora19c3 -e ORACLE_PDB=PDB_19c3 -e ORACLE_PWD=redhat -e INIT_SGA_SIZE=1000M -e INIT_PGA_SIZE=800M -e ENABLE_ARCHIVELOG=true  container-registry.oracle.com/database/enterprise:19.3.0.0
- 
+docker run -d --name oracle19c -p 2020:1521 -p 5500:5500 -e ORACLE_SID=ora19c3 -e ORACLE_PDB=PDB_19c3 -e ORACLE_PWD=redhat -e INIT_SGA_SIZE=1000M -e INIT_PGA_SIZE=800M -e ENABLE_ARCHIVELOG=true  container-registry.oracle.com/database/enterprise:19.3.0.0
+
  
  [root@master ~]# docker logs oracle19   <<< 这里看整个数据库的安装情况
 [2022:07:24 13:26:08]: Acquiring lock .ORA19C3.create_lck with heartbeat 30 secs
